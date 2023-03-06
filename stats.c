@@ -36,7 +36,6 @@ int main(void)
                                 7,  87, 250, 230,  99,   3, 100,  90};
 
     
-    print_statistics(test, (int)SIZE); 
 
 
 return 0;
@@ -47,105 +46,35 @@ return 0;
 
 void print_statistics(int array[],int size )
 {
-	/*Get the minimum*/
-	int min = find_minimum(array, size);
-	
-	/*Get the maximum*/
-	int max = find_maximum(array, size);
-	
-	/*Get the mean*/
-	float mean = find_mean(array, size);
-	
-	/*Get the median*/
-	float median = find_median(array, size);
-    
-    printf("\n\n*********DATA*********\n\n");
-
-    print_array(array, size);
-
-    printf("\n\n");
-	
-    printf("******Statistics********\n\n\tMIN: %d\n\tMAX: %d\n\tMEAN: %.1lf\n\tMEDIAN: %.1lf\n\n\n", min, max, mean, median );
 
 }
 
 /*Function for printing the array*/
 void print_array(int array[], int size)
 {
-    for(int i = 0; i < size; i++)
-    {
-        printf("%d ", array[i]);
-    
-    }
-    printf("\n");    
 }
 
 /*Function for finding the median*/
 float find_median(int array[], int size)
 {
-	float median;
-	if(size % 2)
-		median = (float)(array[size/2] + array[(size/2) + 1])/2;
-	else
-		median = array[size/2];
-
-	return median;
 }
 
 /*Function for finding the mean*/
 float find_mean(int array[], int size)
 {
-    int sum = 0; 
-    float mean;
-    for(int i = 0; i < size; i++)
-        sum += array[i];
-    mean = (float)sum/size;
-
-    return mean;
 }
 
 /*Function for finding the maximum*/
 int find_maximum(int array[], int size)
 {
-    int max =  array[0];
-    for(int i = 0; i < size; i++)
-    {
-        if(max < array[i])
-            max = array[i];
-    }
-
-    return max;
 }
 
 /*Function for finding the minimum*/
 int find_minimum(int array[], int size)
 {
-    int min = array[0]; 
-    for(int i = 0; i < size; i++)
-    {
-        if(min > array[i])
-            min = array[i];
-    }
-
-    return min;
 }
 
 /*Function for sorting array*/
 int* sort_array(int array[], int size)
 {
-    int swap;
-    for(int i = 0; i < size - 1; i++)
-    {
-      for(int j = 0; j < size - 1; j++)
-	{
-	    if(array[j] > array[j+1])
-	    {
-		swap = array[j];
-		array[j] = array[j + 1];
-		array[j + 1] = swap;
-	    } 
-	}  
-           
-    }
-
 }
